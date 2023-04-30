@@ -6,11 +6,12 @@ import { IoMdArrowForward } from 'react-icons/io';
 import { FiTrash2 } from 'react-icons/fi';
 import CartItem from '../components/CartItem';
 import { SidebarContext } from '../contexts/SidebarContext';
+import { CartContext } from '../contexts/CartContext';
 
 
 const Sidebar = () => { 
   const { isOpen, handleClose } = useContext(SidebarContext);
-  const { cart } = useContext(createContext);
+  const { cart } = useContext(CartContext);
 
   return <div className={
     `${isOpen ? 'right-0' : 'right-full'} 
