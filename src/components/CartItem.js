@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext} from 'react';
 import { Link } from 'react-router-dom';
 
 import {IoMdAdd, IoMdClose, IoMdRemove } from 'react-icons/io';
+import { CartContext } from '../contexts/CartContext';
 
 const CartItem = ({ item }) => {
-  
+  const { removeFromCart, increaseAmount, decreaseAmount } = useContext(CartContext);
+
   const { id, title, image, amount, price } = item;
 
   return (
@@ -30,7 +32,7 @@ const CartItem = ({ item }) => {
           {/*qty price and total price*/}
           <div className='flex flex-1 max-w-[100px]
           bg-blue-400 items-center h-full border text-primary font-medium'>
-            <div className='flex-1'><IoMdRemove /></div>
+            <div onClick={()=> removeFromCart(id)} className='flex-1'><IoMdRemove /></div>
             <div className='h-full flex justify-center items-center px-2'>{amount}</div>
             <div className='flex-1 h-full flex justify-center items-center cursor-pointer'><IoMdAdd /></div>
           </div>
