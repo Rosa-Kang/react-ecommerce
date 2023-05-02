@@ -41,9 +41,10 @@ const Sidebar = () => {
       <div onClick={ clearCart} className='cursor-pointer py-4 bg-red-500 text0white w-12 h-12 flex justify-center items-center text-xl'>
         <FiTrash2 />
       </div>
+      </div>
+      <Link to='/' className='capitalize bg-gray-200 flex p-4 justify-center items-center text-primary w-full font-medium'>view cart</Link>
+      <Link to='/' className='capitalize bg-primary flex p-4 justify-center items-center text-white w-full font-medium'>checkout</Link>
     </div>
-    </div>
-
   </div>;
 };
 
