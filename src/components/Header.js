@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import { SidebarContext } from '../contexts/SidebarContext';
+import { CartContext } from '../contexts/CartContext';
 
 import { BsBag } from 'react-icons/bs';
 
 const Header = () => {
   const { isOpen, setIsOpen } = useContext(SidebarContext);
+  const { itemAmount} = useContext(CartContext);
   
   return <header className='bg-pink-200'>
     <div> Header</div>

@@ -30,11 +30,10 @@ const CartItem = ({ item }) => {
 
           <div className="bg-pink-200 flex gap-x-2 h-[36px]text-sm"></div>
           {/*qty price and total price*/}
-          <div className='flex flex-1 max-w-[100px]
-          bg-blue-400 items-center h-full border text-primary font-medium'>
-            <div onClick={()=> removeFromCart(id)} className='flex-1'><IoMdRemove /></div>
+          <div className='flex flex-1 max-w-[100px] items-center h-full border text-primary font-medium'>
+            <div onClick={()=> decreaseAmount(id)} className='flex-1 h-full flex justify-center items-center'><IoMdRemove /></div>
             <div className='h-full flex justify-center items-center px-2'>{amount}</div>
-            <div className='flex-1 h-full flex justify-center items-center cursor-pointer'><IoMdAdd /></div>
+            <div onClick={() => increaseAmount(id)} className='flex-1 flex justify-center items-center cursor-pointer h-full'><IoMdAdd /></div>
           </div>
           <div>{price}</div>
           <div>final price</div>
