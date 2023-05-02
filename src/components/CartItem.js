@@ -23,7 +23,7 @@ const CartItem = ({ item }) => {
               {title}
             </Link>
  
-            <div className='text-xl cursor-pointer'>
+            <div onClick={(()=> removeFromCart(id))} className='text-xl cursor-pointer'>
             <IoMdClose className='text-gray-500 hover:text-gray-500 transition' />
             </div>
           </div>
@@ -35,8 +35,7 @@ const CartItem = ({ item }) => {
             <div className='h-full flex justify-center items-center px-2'>{amount}</div>
             <div onClick={() => increaseAmount(id)} className='flex-1 flex justify-center items-center cursor-pointer h-full'><IoMdAdd /></div>
           </div>
-          <div>{price}</div>
-          <div>final price</div>
+          <div>$ {price * amount}</div>
         </div>
 
 
